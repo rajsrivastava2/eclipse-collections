@@ -139,6 +139,7 @@ public class ConcurrentHashMapUnsafe<K, V>
         }
         if (initialCapacity > MAXIMUM_CAPACITY)
         {
+            //noinspection AssignmentToMethodParameter
             initialCapacity = MAXIMUM_CAPACITY;
         }
 
@@ -649,6 +650,7 @@ public class ConcurrentHashMapUnsafe<K, V>
                     {
                         return null; // null value means no mapping is required
                     }
+                    //noinspection AssignmentToMethodParameter
                     key = keyTransformer.value(key, newValue);
                 }
                 Entry<K, V> newEntry = new Entry<>(key, newValue, (Entry<K, V>) o);
@@ -842,6 +844,7 @@ public class ConcurrentHashMapUnsafe<K, V>
         return null;
     }
 
+    @SuppressWarnings("AssignmentToMethodParameter")
     private V slowGet(Object key, int hash, int index, Object[] currentArray)
     {
         while (true)
@@ -932,6 +935,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             Object o = ConcurrentHashMapUnsafe.arrayAt(currentArray, index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -1130,6 +1134,7 @@ public class ConcurrentHashMapUnsafe<K, V>
         return false;
     }
 
+    @SuppressWarnings("AssignmentToMethodParameter")
     private boolean slowReplace(K key, V oldValue, V newValue, int hash, Object[] currentArray)
     {
         //noinspection LabeledStatement
@@ -1197,6 +1202,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             Object o = ConcurrentHashMapUnsafe.arrayAt(currentArray, index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -1265,6 +1271,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             Object o = ConcurrentHashMapUnsafe.arrayAt(currentArray, index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -2337,6 +2344,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             Object o = ConcurrentHashMapUnsafe.arrayAt(currentArray, index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -2409,6 +2417,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             Object o = ConcurrentHashMapUnsafe.arrayAt(currentArray, index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else

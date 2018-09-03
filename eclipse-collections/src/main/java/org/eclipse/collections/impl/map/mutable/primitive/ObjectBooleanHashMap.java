@@ -1199,6 +1199,7 @@ public class ObjectBooleanHashMap<K> implements MutableObjectBooleanMap<K>, Exte
             int size = ObjectBooleanHashMap.this.size();
             if (result.length < size)
             {
+                //noinspection AssignmentToMethodParameter
                 result = (T[]) Array.newInstance(result.getClass().getComponentType(), size);
             }
             this.copyKeys(result);

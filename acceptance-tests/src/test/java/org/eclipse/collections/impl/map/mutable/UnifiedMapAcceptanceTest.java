@@ -1580,6 +1580,7 @@ public class UnifiedMapAcceptanceTest
             long runTimes = System.nanoTime() - startTime;
             LOGGER.info("{} get: {} ns per get on map size {}", mapName, (double) runTimes / (double) n / size, size);
         }
+        //noinspection AssignmentToMethodParameter
         map = null;
         System.gc();
         Thread.yield();

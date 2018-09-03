@@ -456,6 +456,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -533,6 +534,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -583,6 +585,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -610,6 +613,7 @@ public class UnifiedSetWithHashingStrategy<T>
         }
     }
 
+    @SuppressWarnings("AssignmentToMethodParameter")
     private int chainedForEachWithIndex(ChainedBucket bucket, ObjectIntProcedure<? super T> procedure, int count)
     {
         do
@@ -692,6 +696,7 @@ public class UnifiedSetWithHashingStrategy<T>
     {
         while (bucket.three instanceof ChainedBucket)
         {
+            //noinspection AssignmentToMethodParameter
             bucket = (ChainedBucket) bucket.three;
         }
 
@@ -856,6 +861,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -932,6 +938,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1004,6 +1011,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1112,6 +1120,7 @@ public class UnifiedSetWithHashingStrategy<T>
     {
         if (size > this.maxSize)
         {
+            //noinspection AssignmentToMethodParameter
             size = (int) (size / this.loadFactor) + 1;
             int capacity = Integer.highestOneBit(size);
             if (size != capacity)
@@ -1163,6 +1172,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1285,6 +1295,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 oldBucket = bucket;
                 continue;
             }
@@ -1363,6 +1374,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1424,6 +1436,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1538,6 +1551,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1600,6 +1614,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -1693,6 +1708,7 @@ public class UnifiedSetWithHashingStrategy<T>
         }
     }
 
+    @SuppressWarnings("AssignmentToMethodParameter")
     private int copyBucketToArray(Object[] result, ChainedBucket bucket, int count)
     {
         do
@@ -1896,6 +1912,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
         }
 
+        @SuppressWarnings("AssignmentToMethodParameter")
         private void removeLongChain(ChainedBucket oldBucket, int i)
         {
             do
@@ -1934,6 +1951,7 @@ public class UnifiedSetWithHashingStrategy<T>
             while (true);
         }
 
+        @SuppressWarnings("AssignmentToMethodParameter")
         public Object get(int i)
         {
             ChainedBucket bucket = this;
@@ -2004,6 +2022,7 @@ public class UnifiedSetWithHashingStrategy<T>
                 ChainedBucket bucket = (ChainedBucket) oldBucket.three;
                 if (bucket.three instanceof ChainedBucket)
                 {
+                    //noinspection AssignmentToMethodParameter
                     oldBucket = bucket;
                     continue;
                 }
@@ -2116,6 +2135,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 bucket = (ChainedBucket) bucket.three;
                 continue;
             }
@@ -2347,6 +2367,7 @@ public class UnifiedSetWithHashingStrategy<T>
             }
             if (bucket.three instanceof ChainedBucket)
             {
+                //noinspection AssignmentToMethodParameter
                 oldBucket = bucket;
                 continue;
             }

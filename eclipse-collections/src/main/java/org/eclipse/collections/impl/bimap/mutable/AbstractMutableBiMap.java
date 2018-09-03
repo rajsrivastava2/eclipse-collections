@@ -1047,6 +1047,7 @@ abstract class AbstractMutableBiMap<K, V> extends AbstractBiMap<K, V> implements
             int size = AbstractMutableBiMap.this.size();
             if (result.length < size)
             {
+                //noinspection AssignmentToMethodParameter
                 result = (T[]) Array.newInstance(result.getClass().getComponentType(), size);
             }
             this.copyEntries(result);

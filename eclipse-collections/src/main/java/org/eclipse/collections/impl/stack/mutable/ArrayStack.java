@@ -196,6 +196,7 @@ public class ArrayStack<T> implements MutableStack<T>, Externalizable
         while (count > 0)
         {
             result.add(this.pop());
+            //noinspection AssignmentToMethodParameter
             count--;
         }
         return result;
@@ -214,6 +215,7 @@ public class ArrayStack<T> implements MutableStack<T>, Externalizable
         while (count > 0)
         {
             targetCollection.add(this.pop());
+            //noinspection AssignmentToMethodParameter
             count--;
         }
         return targetCollection;
@@ -232,6 +234,7 @@ public class ArrayStack<T> implements MutableStack<T>, Externalizable
         while (count > 0)
         {
             targetStack.push(this.pop());
+            //noinspection AssignmentToMethodParameter
             count--;
         }
         return targetStack;

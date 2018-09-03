@@ -1588,6 +1588,7 @@ public class UnifiedMap<K, V> extends AbstractMutableMap<K, V>
             {
                 return index;
             }
+            //noinspection AssignmentToMethodParameter
             objectIntProcedure.value((V) chain[i + 1], index++);
         }
         return index;
@@ -2317,6 +2318,7 @@ public class UnifiedMap<K, V> extends AbstractMutableMap<K, V>
             int size = UnifiedMap.this.size();
             if (result.length < size)
             {
+                //noinspection AssignmentToMethodParameter
                 result = (T[]) Array.newInstance(result.getClass().getComponentType(), size);
             }
             this.copyKeys(result);
@@ -2814,6 +2816,7 @@ public class UnifiedMap<K, V> extends AbstractMutableMap<K, V>
             int size = UnifiedMap.this.size();
             if (result.length < size)
             {
+                //noinspection AssignmentToMethodParameter
                 result = (T[]) Array.newInstance(result.getClass().getComponentType(), size);
             }
             this.copyEntries(result);
@@ -3137,6 +3140,7 @@ public class UnifiedMap<K, V> extends AbstractMutableMap<K, V>
             int size = UnifiedMap.this.size();
             if (result.length < size)
             {
+                //noinspection AssignmentToMethodParameter
                 result = (T[]) Array.newInstance(result.getClass().getComponentType(), size);
             }
             this.copyValues(result);

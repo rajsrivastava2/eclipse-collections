@@ -98,6 +98,7 @@ public final class ConcurrentHashMap<K, V>
         }
         if (initialCapacity > MAXIMUM_CAPACITY)
         {
+            //noinspection AssignmentToMethodParameter
             initialCapacity = MAXIMUM_CAPACITY;
         }
 
@@ -533,6 +534,7 @@ public final class ConcurrentHashMap<K, V>
                     {
                         return null; // null value means no mapping is required
                     }
+                    //noinspection AssignmentToMethodParameter
                     key = keyTransformer.value(key, newValue);
                 }
                 Entry<K, V> newEntry = new Entry<>(key, newValue, (Entry<K, V>) o);
@@ -725,6 +727,7 @@ public final class ConcurrentHashMap<K, V>
         return null;
     }
 
+    @SuppressWarnings("AssignmentToMethodParameter")
     private V slowGet(Object key, int hash, int index, AtomicReferenceArray currentArray)
     {
         while (true)
@@ -815,6 +818,7 @@ public final class ConcurrentHashMap<K, V>
             Object o = currentArray.get(index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -1013,6 +1017,7 @@ public final class ConcurrentHashMap<K, V>
         return false;
     }
 
+    @SuppressWarnings("AssignmentToMethodParameter")
     private boolean slowReplace(K key, V oldValue, V newValue, int hash, AtomicReferenceArray currentArray)
     {
         //noinspection LabeledStatement
@@ -1080,6 +1085,7 @@ public final class ConcurrentHashMap<K, V>
             Object o = currentArray.get(index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -1148,6 +1154,7 @@ public final class ConcurrentHashMap<K, V>
             Object o = currentArray.get(index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -2193,6 +2200,7 @@ public final class ConcurrentHashMap<K, V>
             Object o = currentArray.get(index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else
@@ -2264,6 +2272,7 @@ public final class ConcurrentHashMap<K, V>
             Object o = currentArray.get(index);
             if (o == RESIZED || o == RESIZING)
             {
+                //noinspection AssignmentToMethodParameter
                 currentArray = this.helpWithResizeWhileCurrentIndex(currentArray, index);
             }
             else

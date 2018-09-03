@@ -177,6 +177,7 @@ final class ImmutableArrayStack<T> implements ImmutableStack<T>, Serializable
         while (count > 0)
         {
             newDelegate.remove(this.delegate.size() - 1);
+            //noinspection AssignmentToMethodParameter
             count--;
         }
         return new ImmutableArrayStack<>(newDelegate);

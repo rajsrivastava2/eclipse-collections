@@ -355,6 +355,7 @@ public class FastList<T>
     {
         if (array.length < this.size)
         {
+            //noinspection AssignmentToMethodParameter
             array = (E[]) Array.newInstance(array.getClass().getComponentType(), this.size);
         }
         System.arraycopy(this.items, 0, array, 0, this.size);

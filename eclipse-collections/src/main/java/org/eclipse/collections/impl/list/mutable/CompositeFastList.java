@@ -329,6 +329,7 @@ public final class CompositeFastList<E>
         int currentSize = this.lists.getFirst().size();
         while (index >= currentSize)
         {
+            //noinspection AssignmentToMethodParameter
             index -= currentSize;
             currentSize = this.lists.get(++p).size();
         }
@@ -351,6 +352,7 @@ public final class CompositeFastList<E>
         int currentSize = this.lists.getFirst().size();
         while (index >= currentSize)
         {
+            //noinspection AssignmentToMethodParameter
             index -= currentSize;
             currentSize = this.lists.get(++p).size();
         }
@@ -388,6 +390,7 @@ public final class CompositeFastList<E>
         int currentSize = this.lists.getFirst().size();
         while (index >= currentSize)
         {
+            //noinspection AssignmentToMethodParameter
             index -= currentSize;
             currentSize = this.lists.get(++p).size();
         }

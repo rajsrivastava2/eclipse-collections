@@ -478,6 +478,7 @@ final class ImmutableArrayList<T>
         int size = this.size();
         if (a.length < size)
         {
+            //noinspection AssignmentToMethodParameter
             a = (E[]) Array.newInstance(a.getClass().getComponentType(), size);
         }
         System.arraycopy(this.items, 0, a, 0, size);

@@ -107,6 +107,7 @@ final class ImmutableTreeSet<T>
                 }
                 if (uniqueCount < input.length)
                 {
+                    //noinspection AssignmentToMethodParameter
                     input = Arrays.copyOf(unique, uniqueCount);
                 }
             }

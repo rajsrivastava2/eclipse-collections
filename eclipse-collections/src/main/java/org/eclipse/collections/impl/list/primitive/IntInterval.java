@@ -177,6 +177,7 @@ public final class IntInterval
     /**
      * Returns an IntInterval representing the even values from the value from to the value to.
      */
+    @SuppressWarnings("AssignmentToMethodParameter")
     public static IntInterval evensFromTo(int from, int to)
     {
         if (from % 2 != 0)
@@ -207,6 +208,7 @@ public final class IntInterval
     /**
      * Returns an IntInterval representing the odd values from the value from to the value to.
      */
+    @SuppressWarnings("AssignmentToMethodParameter")
     public static IntInterval oddsFromTo(int from, int to)
     {
         if (from % 2 == 0)

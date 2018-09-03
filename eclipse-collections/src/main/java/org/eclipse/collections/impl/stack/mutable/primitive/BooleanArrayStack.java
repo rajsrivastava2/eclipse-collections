@@ -130,6 +130,7 @@ public final class BooleanArrayStack implements MutableBooleanStack, Externaliza
         while (count > 0)
         {
             subList.add(this.pop());
+            //noinspection AssignmentToMethodParameter
             count--;
         }
         return subList;
