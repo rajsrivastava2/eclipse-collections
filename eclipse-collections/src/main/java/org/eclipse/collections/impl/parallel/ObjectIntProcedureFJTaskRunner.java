@@ -60,6 +60,7 @@ public final class ObjectIntProcedureFJTaskRunner<T, BT extends ObjectIntProcedu
         this.procedures = new ObjectIntProcedureFJTask[this.taskCount];
 
         int sectionSize = list.size() / this.taskCount;
+        @SuppressWarnings("UnnecessaryLocalVariable")
         int size = this.taskCount;
         for (int index = 0; index < size; index++)
         {

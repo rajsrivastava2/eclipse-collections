@@ -52,6 +52,7 @@ public final class ArrayProcedureFJTaskRunner<T, BT extends Procedure<? super T>
     {
         this.procedures = new ArrayProcedureFJTask[this.taskCount];
         int sectionSize = array.length / this.taskCount;
+        @SuppressWarnings("UnnecessaryLocalVariable")
         int size = this.taskCount;
         for (int index = 0; index < size; index++)
         {

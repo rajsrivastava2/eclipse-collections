@@ -502,6 +502,7 @@ final class ImmutableArrayList<T>
         buf.append('[');
 
         int localSize = this.items.length;
+        @SuppressWarnings("UnnecessaryLocalVariable")
         T[] localItems = this.items;
         for (int i = 0; i < localSize; i++)
         {

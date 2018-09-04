@@ -50,6 +50,7 @@ public final class ProcedureFJTaskRunner<T, BT extends Procedure<? super T>>
     {
         this.procedures = new ProcedureFJTask[this.taskCount];
         int sectionSize = list.size() / this.taskCount;
+        @SuppressWarnings("UnnecessaryLocalVariable")
         int size = this.taskCount;
         for (int index = 0; index < size; index++)
         {

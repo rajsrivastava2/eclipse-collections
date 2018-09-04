@@ -48,6 +48,7 @@ public final class BatchIterableProcedureFJTaskRunner<T, BT extends Procedure<? 
     private void createAndExecuteTasks(Executor executor, ProcedureFactory<BT> procedureFactory, BatchIterable<T> batchIterable)
     {
         this.procedures = new BatchIterableProcedureFJTask[this.taskCount];
+        @SuppressWarnings("UnnecessaryLocalVariable")
         int size = this.taskCount;
         for (int batchNumber = 0; batchNumber < size; batchNumber++)
         {
