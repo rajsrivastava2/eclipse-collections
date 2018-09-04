@@ -201,11 +201,11 @@ public class ComparatorsTest
     {
         Person raab = new Person("Don", "Raab", 0);
         Person white = new Person("Barry", "White", 0);
-        Person manilow = new Person("Barry", "Manilow", 0);
         Comparator<Person> personComparator = Comparators.fromFunctions(Person.TO_FIRST, Person.TO_LAST);
         Verify.assertPositive(personComparator.compare(raab, white));
         Verify.assertNegative(personComparator.compare(white, raab));
         Verify.assertZero(personComparator.compare(raab, raab));
+        Person manilow = new Person("Barry", "Manilow", 0);
         Verify.assertPositive(personComparator.compare(white, manilow));
         Verify.assertNegative(personComparator.compare(manilow, white));
     }
@@ -215,14 +215,14 @@ public class ComparatorsTest
     {
         Person raab = new Person("Don", "Raab", 21);
         Person white = new Person("Barry", "White", 16);
-        Person manilow = new Person("Barry", "Manilow", 60);
-        Person manilow2 = new Person("Barry", "Manilow", 61);
         Comparator<Person> personComparator = Comparators.fromFunctions(Person.TO_FIRST, Person.TO_LAST, Person.TO_AGE);
         Verify.assertPositive(personComparator.compare(raab, white));
         Verify.assertNegative(personComparator.compare(white, raab));
         Verify.assertZero(personComparator.compare(raab, raab));
+        Person manilow = new Person("Barry", "Manilow", 60);
         Verify.assertPositive(personComparator.compare(white, manilow));
         Verify.assertNegative(personComparator.compare(manilow, white));
+        Person manilow2 = new Person("Barry", "Manilow", 61);
         Verify.assertNegative(personComparator.compare(manilow, manilow2));
         Verify.assertPositive(personComparator.compare(manilow2, manilow));
     }

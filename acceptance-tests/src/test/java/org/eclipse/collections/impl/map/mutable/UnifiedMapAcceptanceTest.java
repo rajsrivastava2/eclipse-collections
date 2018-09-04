@@ -1392,8 +1392,8 @@ public class UnifiedMapAcceptanceTest
         for (Iterator<String> it = values.iterator(); it.hasNext(); )
         {
             String value = it.next();
-            int x = Integer.parseInt(value.substring(1));
             count++;
+            int x = Integer.parseInt(value.substring(1));
             if (x % removeStride == 0)
             {
                 it.remove();
@@ -1447,8 +1447,8 @@ public class UnifiedMapAcceptanceTest
         for (Iterator<String> it = values.iterator(); it.hasNext(); )
         {
             String value = it.next();
-            int x = Integer.parseInt(value.substring(1));
             count++;
+            int x = Integer.parseInt(value.substring(1));
             if (x % removeStride != 0)
             {
                 it.remove();

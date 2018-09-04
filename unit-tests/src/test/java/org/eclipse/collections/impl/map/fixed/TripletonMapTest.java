@@ -360,9 +360,9 @@ public class TripletonMapTest extends AbstractMemoryEfficientMutableMapTest
     @Test
     public void testClone()
     {
-        MutableMap<Integer, String> map = new TripletonMap<>(1, "One", 2, "Two", 3, "Three");
         try
         {
+            MutableMap<Integer, String> map = new TripletonMap<>(1, "One", 2, "Two", 3, "Three");
             Verify.assertShallowClone(map);
         }
         catch (Exception e)

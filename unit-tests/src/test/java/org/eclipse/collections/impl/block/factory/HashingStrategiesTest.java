@@ -56,16 +56,16 @@ public class HashingStrategiesTest
     public void nullSafeFromFunction()
     {
         Person john = new Person("John", "Smith");
-        Person jane = new Person("Jane", "Smith");
-        Person nullLast = new Person("Jane", null);
-        Person nullFirst = new Person(null, "Smith");
 
         HashingStrategy<Person> lastHashingStrategy = HashingStrategies.nullSafeFromFunction(Person.TO_LAST);
         HashingStrategy<Person> firstHashingStrategy = HashingStrategies.nullSafeFromFunction(Person.TO_FIRST);
 
         Assert.assertEquals("John".hashCode(), firstHashingStrategy.computeHashCode(john));
+        Person nullFirst = new Person(null, "Smith");
         Assert.assertEquals(0, firstHashingStrategy.computeHashCode(nullFirst));
+        Person nullLast = new Person("Jane", null);
         Assert.assertEquals("Jane".hashCode(), firstHashingStrategy.computeHashCode(nullLast));
+        Person jane = new Person("Jane", "Smith");
         Assert.assertEquals(firstHashingStrategy.computeHashCode(jane), firstHashingStrategy.computeHashCode(nullLast));
         Assert.assertNotEquals(john.hashCode(), firstHashingStrategy.computeHashCode(john));
         Assert.assertFalse(firstHashingStrategy.equals(john, jane));
@@ -86,12 +86,12 @@ public class HashingStrategiesTest
     public void fromFunction()
     {
         Person john = new Person("John", "Smith");
-        Person jane = new Person("Jane", "Smith");
         HashingStrategy<Person> lastHashingStrategy = HashingStrategies.fromFunction(Person.TO_LAST);
         HashingStrategy<Person> firstHashingStrategy = HashingStrategies.fromFunction(Person.TO_FIRST);
 
         Assert.assertEquals("John".hashCode(), firstHashingStrategy.computeHashCode(john));
         Assert.assertNotEquals(john.hashCode(), firstHashingStrategy.computeHashCode(john));
+        Person jane = new Person("Jane", "Smith");
         Assert.assertFalse(firstHashingStrategy.equals(john, jane));
 
         Assert.assertEquals("Smith".hashCode(), lastHashingStrategy.computeHashCode(john));
@@ -121,7 +121,6 @@ public class HashingStrategiesTest
     {
         Person john1 = new Person("John", "Smith");
         Person john2 = new Person("John", "Smith");
-        Person john3 = new Person("John", "Doe");
 
         HashingStrategy<Person> chainedHashingStrategy = HashingStrategies.chain(
                 HashingStrategies.fromFunction(Person.TO_FIRST),
@@ -131,6 +130,7 @@ public class HashingStrategiesTest
         HashingStrategy<Person> chainedHashingStrategy2 = HashingStrategies.chain(
                 HashingStrategies.fromFunction(Person.TO_FIRST));
         Assert.assertEquals("John".hashCode(), chainedHashingStrategy2.computeHashCode(john1));
+        Person john3 = new Person("John", "Doe");
         Assert.assertTrue(chainedHashingStrategy2.equals(john1, john3));
     }
 
@@ -139,10 +139,10 @@ public class HashingStrategiesTest
     {
         Person john1 = new Person("John", "Smith");
         Person john2 = new Person("John", "Smith", 10);
-        Person john3 = new Person("John", "Doe");
 
         HashingStrategy<Person> chainedHashingStrategy = HashingStrategies.fromFunctions(Person.TO_FIRST, Person.TO_LAST);
         Assert.assertTrue(chainedHashingStrategy.equals(john1, john2));
+        Person john3 = new Person("John", "Doe");
         Assert.assertFalse(chainedHashingStrategy.equals(john1, john3));
     }
 
@@ -150,14 +150,14 @@ public class HashingStrategiesTest
     public void fromFunctionsThreeArgs()
     {
         Person john1 = new Person("John", "Smith");
-        Person john2 = new Person("John", "Smith");
-        Person john3 = new Person("John", "Doe");
-        Person john4 = new Person("John", "Smith", 10);
 
         HashingStrategy<Person> chainedHashingStrategy = HashingStrategies.fromFunctions(Person.TO_FIRST, Person.TO_LAST, Person.TO_AGE);
         Assert.assertEquals(john1.hashCode(), chainedHashingStrategy.computeHashCode(john1));
+        Person john2 = new Person("John", "Smith");
         Assert.assertTrue(chainedHashingStrategy.equals(john1, john2));
+        Person john3 = new Person("John", "Doe");
         Assert.assertFalse(chainedHashingStrategy.equals(john1, john3));
+        Person john4 = new Person("John", "Smith", 10);
         Assert.assertFalse(chainedHashingStrategy.equals(john1, john4));
     }
 

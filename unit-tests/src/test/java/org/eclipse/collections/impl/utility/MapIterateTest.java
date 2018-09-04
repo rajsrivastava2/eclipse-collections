@@ -289,12 +289,12 @@ public class MapIterateTest
     public void getIfAbsentPut()
     {
         MutableMap<String, String> unifiedMap = UnifiedMap.newMap();
-        Map<String, String> hashMap = new HashMap<>();
         String value = new String("value");
         String value1 = MapIterate.getIfAbsentPut(unifiedMap, "key", () -> value);
         String value2 = MapIterate.getIfAbsentPut(unifiedMap, "key", () -> value);
         Assert.assertEquals("value", value1);
         Assert.assertSame(value1, value2);
+        Map<String, String> hashMap = new HashMap<>();
         String value3 = MapIterate.getIfAbsentPut(hashMap, "key", () -> value);
         String value4 = MapIterate.getIfAbsentPut(hashMap, "key", () -> value);
         Assert.assertEquals("value", value3);

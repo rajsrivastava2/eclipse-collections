@@ -142,8 +142,8 @@ public class ImmutableArrayBag<T>
     private ImmutableBag<T> newArrayBagWith(T element, int elementIndex, int distinctItemCount)
     {
         T[] newKeys = (T[]) new Object[distinctItemCount];
-        int[] newCounts = new int[distinctItemCount];
         System.arraycopy(this.keys, 0, newKeys, 0, this.keys.length);
+        int[] newCounts = new int[distinctItemCount];
         System.arraycopy(this.counts, 0, newCounts, 0, this.counts.length);
         if (elementIndex == -1)
         {

@@ -986,12 +986,12 @@ public class ConcurrentHashMapUnsafe<K, V>
         {
             ConcurrentHashMapUnsafe<K, V> incoming = (ConcurrentHashMapUnsafe<K, V>) map;
             Object[] currentArray = incoming.table;
-            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             int chunkSize = currentArray.length / chunks;
             if (currentArray.length % chunks != 0)
             {
                 chunkSize++;
             }
+            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             for (int i = 0; i < chunks; i++)
             {
                 int start = i * chunkSize;
@@ -1324,12 +1324,12 @@ public class ConcurrentHashMapUnsafe<K, V>
         int chunks = blocks.size();
         if (chunks > 1)
         {
-            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             int chunkSize = currentArray.length / chunks;
             if (currentArray.length % chunks != 0)
             {
                 chunkSize++;
             }
+            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             for (int i = 0; i < chunks; i++)
             {
                 int start = i * chunkSize;
@@ -1382,12 +1382,12 @@ public class ConcurrentHashMapUnsafe<K, V>
         int chunks = blocks.size();
         if (chunks > 1)
         {
-            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             int chunkSize = currentArray.length / chunks;
             if (currentArray.length % chunks != 0)
             {
                 chunkSize++;
             }
+            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             for (int i = 0; i < chunks; i++)
             {
                 int start = i * chunkSize;
