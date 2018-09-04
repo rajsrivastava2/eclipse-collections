@@ -70,26 +70,26 @@ public class BooleanHashSetTest extends AbstractBooleanSetTestCase
         super.booleanIterator_with_remove();
 
         BooleanHashSet falseSet = this.newWith(false);
-        MutableBooleanIterator mutableBooleanIterator = falseSet.booleanIterator();
-        Assert.assertTrue(mutableBooleanIterator.hasNext());
-        Assert.assertFalse(mutableBooleanIterator.next());
-        mutableBooleanIterator.remove();
+        MutableBooleanIterator booleanIterator1 = falseSet.booleanIterator();
+        Assert.assertTrue(booleanIterator1.hasNext());
+        Assert.assertFalse(booleanIterator1.next());
+        booleanIterator1.remove();
         Verify.assertEmpty(falseSet);
-        Verify.assertThrows(NoSuchElementException.class, mutableBooleanIterator::next);
-        Verify.assertThrows(IllegalStateException.class, mutableBooleanIterator::remove);
+        Verify.assertThrows(NoSuchElementException.class, booleanIterator1::next);
+        Verify.assertThrows(IllegalStateException.class, booleanIterator1::remove);
         BooleanHashSet trueSet = this.newWith(true);
-        mutableBooleanIterator = trueSet.booleanIterator();
-        Assert.assertTrue(mutableBooleanIterator.hasNext());
-        Assert.assertTrue(mutableBooleanIterator.next());
-        mutableBooleanIterator.remove();
+        MutableBooleanIterator booleanIterator2 = trueSet.booleanIterator();
+        Assert.assertTrue(booleanIterator2.hasNext());
+        Assert.assertTrue(booleanIterator2.next());
+        booleanIterator2.remove();
         Verify.assertEmpty(trueSet);
-        Verify.assertThrows(NoSuchElementException.class, mutableBooleanIterator::next);
-        Verify.assertThrows(IllegalStateException.class, mutableBooleanIterator::remove);
+        Verify.assertThrows(NoSuchElementException.class, booleanIterator2::next);
+        Verify.assertThrows(IllegalStateException.class, booleanIterator2::remove);
         BooleanHashSet emptySet = new BooleanHashSet();
-        mutableBooleanIterator = emptySet.booleanIterator();
-        Assert.assertFalse(mutableBooleanIterator.hasNext());
+        MutableBooleanIterator booleanIterator3 = emptySet.booleanIterator();
+        Assert.assertFalse(booleanIterator3.hasNext());
         Verify.assertEmpty(emptySet);
-        Verify.assertThrows(NoSuchElementException.class, mutableBooleanIterator::next);
-        Verify.assertThrows(IllegalStateException.class, mutableBooleanIterator::remove);
+        Verify.assertThrows(NoSuchElementException.class, booleanIterator3::next);
+        Verify.assertThrows(IllegalStateException.class, booleanIterator3::remove);
     }
 }

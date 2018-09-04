@@ -612,12 +612,12 @@ public class AggregateByTest extends AbstractJMHTestRunner
         public int hashCode()
         {
             int result = (int) (this.count ^ (this.count >>> 32));
-            long temp = Double.doubleToLongBits(this.sum);
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
-            temp = Double.doubleToLongBits(this.min);
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
-            temp = Double.doubleToLongBits(this.max);
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
+            long temp1 = Double.doubleToLongBits(this.sum);
+            result = 31 * result + (int) (temp1 ^ (temp1 >>> 32));
+            long temp2 = Double.doubleToLongBits(this.min);
+            result = 31 * result + (int) (temp2 ^ (temp2 >>> 32));
+            long temp3 = Double.doubleToLongBits(this.max);
+            result = 31 * result + (int) (temp3 ^ (temp3 >>> 32));
             return result;
         }
 
@@ -678,12 +678,12 @@ public class AggregateByTest extends AbstractJMHTestRunner
         public int hashCode()
         {
             int result = (int) (this.getCount() ^ (this.getCount() >>> 32));
-            long temp = Double.doubleToLongBits(this.getSum());
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
-            temp = Double.doubleToLongBits(this.getMin());
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
-            temp = Double.doubleToLongBits(this.getMax());
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
+            long temp1 = Double.doubleToLongBits(this.getSum());
+            result = 31 * result + (int) (temp1 ^ (temp1 >>> 32));
+            long temp2 = Double.doubleToLongBits(this.getMin());
+            result = 31 * result + (int) (temp2 ^ (temp2 >>> 32));
+            long temp3 = Double.doubleToLongBits(this.getMax());
+            result = 31 * result + (int) (temp3 ^ (temp3 >>> 32));
             return result;
         }
     }

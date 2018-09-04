@@ -1395,12 +1395,11 @@ public final class ParallelIterate
             V groupKey = this.groupBy.valueOf(each);
             DoubleDoublePair sumCompensation = this.map.getIfAbsentPut(groupKey, () -> PrimitiveTuples.pair(0.0d, 0.0d));
             double sum = sumCompensation.getOne();
-            double compensation = sumCompensation.getTwo();
-            double adjustedValue = this.function.doubleValueOf(each) - compensation;
+            double previousCompensation = sumCompensation.getTwo();
+            double adjustedValue = this.function.doubleValueOf(each) - previousCompensation;
             double nextSum = sum + adjustedValue;
-            compensation = nextSum - sum - adjustedValue;
-            sum = nextSum;
-            this.map.put(groupKey, PrimitiveTuples.pair(sum, compensation));
+            double nextCompensation = nextSum - sum - adjustedValue;
+            this.map.put(groupKey, PrimitiveTuples.pair(nextSum, nextCompensation));
         }
 
         public MutableMap<V, DoubleDoublePair> getResult()
@@ -1469,12 +1468,11 @@ public final class ParallelIterate
             V groupKey = this.groupBy.valueOf(each);
             DoubleDoublePair sumCompensation = this.map.getIfAbsentPut(groupKey, () -> PrimitiveTuples.pair(0.0d, 0.0d));
             double sum = sumCompensation.getOne();
-            double compensation = sumCompensation.getTwo();
-            double adjustedValue = this.function.floatValueOf(each) - compensation;
+            double previousCompensation = sumCompensation.getTwo();
+            double adjustedValue = this.function.floatValueOf(each) - previousCompensation;
             double nextSum = sum + adjustedValue;
-            compensation = nextSum - sum - adjustedValue;
-            sum = nextSum;
-            this.map.put(groupKey, PrimitiveTuples.pair(sum, compensation));
+            double nextCompensation = nextSum - sum - adjustedValue;
+            this.map.put(groupKey, PrimitiveTuples.pair(nextSum, nextCompensation));
         }
 
         public MutableMap<V, DoubleDoublePair> getResult()

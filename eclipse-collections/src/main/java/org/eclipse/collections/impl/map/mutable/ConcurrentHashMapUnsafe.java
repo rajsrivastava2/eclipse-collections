@@ -388,11 +388,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             int end = start + ResizeContainer.QUEUE_INCREMENT;
             if (end > 0)
             {
-                if (start < 0)
-                {
-                    start = 0;
-                }
-                for (int j = end - 1; j >= start; )
+                for (int j = end - 1; j >= start && j >= 0; )
                 {
                     Object o = ConcurrentHashMapUnsafe.arrayAt(src, j);
                     if (o == null)
