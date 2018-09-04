@@ -391,6 +391,7 @@ public class ConcurrentHashMapUnsafe<K, V>
             {
                 if (start < 0)
                 {
+                    //noinspection ReuseOfLocalVariable
                     start = 0;
                 }
                 for (int j = end - 1; j >= start; )

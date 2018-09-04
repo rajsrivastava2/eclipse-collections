@@ -1389,6 +1389,7 @@ public final class ParallelIterate
             this.function = function;
         }
 
+        @SuppressWarnings("ReuseOfLocalVariable")
         @Override
         public void value(T each)
         {
@@ -1463,6 +1464,7 @@ public final class ParallelIterate
             this.function = function;
         }
 
+        @SuppressWarnings("ReuseOfLocalVariable")
         @Override
         public void value(T each)
         {
