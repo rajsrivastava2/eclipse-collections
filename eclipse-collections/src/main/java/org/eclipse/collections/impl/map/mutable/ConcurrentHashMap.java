@@ -51,7 +51,7 @@ import org.eclipse.collections.impl.utility.Iterate;
 import org.eclipse.collections.impl.utility.MapIterate;
 import org.eclipse.collections.impl.utility.internal.IterableIterate;
 
-@SuppressWarnings({ "rawtypes", "ObjectEquality" })
+@SuppressWarnings({"rawtypes", "ObjectEquality"})
 public final class ConcurrentHashMap<K, V>
         extends AbstractMutableMap<K, V>
         implements ConcurrentMutableMap<K, V>, Externalizable
@@ -860,12 +860,12 @@ public final class ConcurrentHashMap<K, V>
         {
             ConcurrentHashMap<K, V> incoming = (ConcurrentHashMap<K, V>) map;
             AtomicReferenceArray currentArray = incoming.table;
-            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             int chunkSize = currentArray.length() / chunks;
             if (currentArray.length() % chunks != 0)
             {
                 chunkSize++;
             }
+            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             for (int i = 0; i < chunks; i++)
             {
                 int start = i * chunkSize;
@@ -1195,12 +1195,12 @@ public final class ConcurrentHashMap<K, V>
         int chunks = blocks.size();
         if (chunks > 1)
         {
-            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             int chunkSize = currentArray.length() / chunks;
             if (currentArray.length() % chunks != 0)
             {
                 chunkSize++;
             }
+            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             for (int i = 0; i < chunks; i++)
             {
                 int start = i * chunkSize;
@@ -1253,12 +1253,12 @@ public final class ConcurrentHashMap<K, V>
         int chunks = blocks.size();
         if (chunks > 1)
         {
-            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             int chunkSize = currentArray.length() / chunks;
             if (currentArray.length() % chunks != 0)
             {
                 chunkSize++;
             }
+            FutureTask<?>[] futures = new FutureTask<?>[chunks];
             for (int i = 0; i < chunks; i++)
             {
                 int start = i * chunkSize;

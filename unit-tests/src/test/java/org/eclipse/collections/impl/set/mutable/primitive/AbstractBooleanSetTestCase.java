@@ -563,8 +563,8 @@ public abstract class AbstractBooleanSetTestCase extends AbstractMutableBooleanC
         Verify.assertThrows(NoSuchElementException.class, (Runnable) booleanIterator2::next);
 
         BooleanIterator booleanIterator3 = this.setWithTrueFalse.booleanIterator();
-        BooleanHashSet actual = new BooleanHashSet();
         Assert.assertTrue(booleanIterator3.hasNext());
+        BooleanHashSet actual = new BooleanHashSet();
         actual.add(booleanIterator3.next());
         Assert.assertTrue(booleanIterator3.hasNext());
         actual.add(booleanIterator3.next());

@@ -374,8 +374,8 @@ public class IntervalTest
     {
         Interval interval = Interval.evensFromTo(0, 10);
         int[] evens = {0, 2, 4, 6, 8, 10};
-        int[] odds = {1, 3, 5, 7, 9};
         this.assertIntervalContainsAll(interval, evens);
+        int[] odds = {1, 3, 5, 7, 9};
         this.denyIntervalContainsAny(interval, odds);
         Assert.assertEquals(6, interval.size());
 
@@ -386,8 +386,8 @@ public class IntervalTest
 
         Interval negativeInterval = Interval.evensFromTo(-5, 5);
         int[] negativeEvens = {-4, -2, 0, 2, 4};
-        int[] negativeOdds = {-3, -1, 1, 3};
         this.assertIntervalContainsAll(negativeInterval, negativeEvens);
+        int[] negativeOdds = {-3, -1, 1, 3};
         this.denyIntervalContainsAny(negativeInterval, negativeOdds);
         Assert.assertEquals(5, negativeInterval.size());
 
