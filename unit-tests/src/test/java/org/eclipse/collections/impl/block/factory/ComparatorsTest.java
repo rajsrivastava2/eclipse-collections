@@ -215,11 +215,12 @@ public class ComparatorsTest
     {
         Person raab = new Person("Don", "Raab", 21);
         Person white = new Person("Barry", "White", 16);
+        Person manilow = new Person("Barry", "Manilow", 60);
+        
         Comparator<Person> personComparator = Comparators.fromFunctions(Person.TO_FIRST, Person.TO_LAST, Person.TO_AGE);
         Verify.assertPositive(personComparator.compare(raab, white));
         Verify.assertNegative(personComparator.compare(white, raab));
         Verify.assertZero(personComparator.compare(raab, raab));
-        Person manilow = new Person("Barry", "Manilow", 60);
         Verify.assertPositive(personComparator.compare(white, manilow));
         Verify.assertNegative(personComparator.compare(manilow, white));
         Person manilow2 = new Person("Barry", "Manilow", 61);

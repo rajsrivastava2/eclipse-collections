@@ -925,9 +925,9 @@ public abstract class AbstractListTestCase
     @Test
     public void getWithArrayIndexOutOfBoundsException()
     {
+        Object item = new Object();
         try
         {
-            Object item = new Object();
             this.newWith(item).get(-1);
             fail("Should not reach here! Exception should be thrown on previous line.");
         }
