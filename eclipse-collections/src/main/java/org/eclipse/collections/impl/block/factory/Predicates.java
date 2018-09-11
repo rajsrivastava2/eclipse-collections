@@ -107,12 +107,12 @@ public abstract class Predicates<T>
 
     public static <T> Predicates<T> or(Predicate<? super T> predicate1, Predicate<? super T> predicate2)
     {
-        return new OrPredicate<>(predicate1, predicate2);
+        return new OrPredicate<T>(predicate1, predicate2);
     }
 
     public static <T> Predicates<T> or(Predicate<? super T>... predicates)
     {
-        return new OrIterablePredicate<>(Arrays.asList(predicates));
+        return new OrIterablePredicate<T>(Arrays.asList(predicates));
     }
 
     public static <T> Predicates<T> and(Iterable<? extends Predicate<? super T>> predicates)
