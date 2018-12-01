@@ -101,6 +101,15 @@ public class SynchronizedBagMultimap<K, V>
     }
 
     @Override
+    public MutableBag<V> getIfAbsentPut(K key, Iterable<? extends V> values)
+    {
+        synchronized (this.getLock())
+        {
+            return this.getDelegate().getIfAbsentPut(key, values);
+        }
+    }
+
+    @Override
     public MutableBagMultimap<K, V> toMutable()
     {
         synchronized (this.getLock())

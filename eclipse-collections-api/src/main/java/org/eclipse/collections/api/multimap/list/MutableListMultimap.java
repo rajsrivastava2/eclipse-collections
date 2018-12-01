@@ -37,6 +37,9 @@ public interface MutableListMultimap<K, V>
     MutableList<V> get(K key);
 
     @Override
+    MutableList<V> getIfAbsentPut(K key, Iterable<? extends V> values);
+
+    @Override
     MutableBagMultimap<V, K> flip();
 
     @Override
